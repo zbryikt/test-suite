@@ -4,3 +4,4 @@ node_modules
 *.log
 secret.*
 .nyc_output
+web/static/assets/
