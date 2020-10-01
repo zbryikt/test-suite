@@ -21,7 +21,9 @@
   "devDependencies": {
     "LiveScript": ">=1.2.0",
     "fedep": "github:plotdb/fedep",
+    "mochawesome": "^6.1.1",
     "nyc": "^15.1.0",
+    "puppeteer": "^5.3.1",
     "stylus": "^0.54.5",
     "template": "github:zbryikt/template#v2",
     "uglify-js": "=3.2.0",
@@ -47,7 +49,11 @@
   "nyc": {
     "all": true,
     "extension": ".ls",
-    "require": ["livescript"],
-    "include": ["src/**/*"]
+    "require": [
+      "livescript"
+    ],
+    "include": [
+      "src/**/*"
+    ]
   }
 }

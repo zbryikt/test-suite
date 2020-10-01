@@ -9,7 +9,9 @@ html
     script(src="/assets/lib/assert/2.0.0/assert.js")
     script: :lsc
       assert = require('assert')
-      mocha.setup \bdd
+      mocha.setup do
+        ui: \bdd
+        reporter: \json
       # mocha use `it` which conflict with LiveScript `it` parameter.
       that = it
       describe \array, ->
@@ -17,4 +19,9 @@ html
           that "should return -1 when the value is not present", ->
             assert.equal [1,2,3].indexOf(4), -1
 
-      mocha.run!
+      ret = mocha.run!
+      ret.on \end, ->
+        setTimeout (-> 
+          window.result = ret.testResults
+          report window.result
+        ), 3000
