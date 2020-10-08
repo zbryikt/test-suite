@@ -7,6 +7,7 @@ puppeteer.launch {headless: true, args: <[--no-sandbox]>}
     browser.newPage!
   .then (page) ->
     lc.page = page
+    page.on \console, (msg) -> for m in msg._args => console.log m.toString!
     console.log "goto..."
     new Promise (res, rej) ->
       lc.page.expose-function \report, -> res it
