@@ -26,6 +26,9 @@ test code:
       describe '#indexOf()', ->
         that "should return -1 when the value is not present", ->
           assert.equal [1,2,3].indexOf(4), -1
+    describe \deepequal, ->
+      that "should equal", ->
+        assert.deepStrictEqual {a: NaN}, {a: NaN}
 
 run test with livescript:
 
