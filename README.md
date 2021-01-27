@@ -1,4 +1,4 @@
-# test-suite
+# test-suite ( moved to plotdb/practices )
 
 guide to do testing in different scenario.
 
@@ -7,13 +7,17 @@ guide to do testing in different scenario.
 
 We use following stack for testing:
 
- * `mocha` - flexible test framework ( `npm i mocha` )
+ * `mocha` - flexible test framework
    - `sinonjs` - test spy ( recording args, retval, value of this and exception thrown of a function )
    - `mochawesome` - report generator 
-     npm i mochawesome
      mocha --reporter mochawesome
    - `assert` - mocha let you choose your own assert lib. for a quick choice, use node.js core lib `assert` directly.
    - `instanbul` - test coverage
+
+install ( mocha, mochawesome, instanbul ):
+
+    npm install --save-dev mocha mochawesome nyc
+
 
 ## Test in NodeJS
 
